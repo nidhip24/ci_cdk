@@ -8,7 +8,7 @@ phases:
     commands:
       - cdk bootstrap
       - cdk synth
-      - cdk deploy --verbose --require-approval never
+      - cdk deploy --require-approval never
 artifacts:
   files:
     - '**/*'
