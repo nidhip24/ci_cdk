@@ -3,6 +3,7 @@
   "MyFirstBucketB8884501": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
+    "BucketName": "cdk-s3-bucket-nk",
     "VersioningConfiguration": {
      "Status": "Enabled"
     }
@@ -51,7 +52,7 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
-     "ZipFile": "\n        exports.handler = async function(event) {\n          console.log('Lambda invoked!');\n          return { statusCode: 200, body: 'Hello, World!' };\n        }\n      "
+     "ZipFile": "\n      exports.handler = async function(event) {\n        console.log('Lambda invoked!');\n        return { statusCode: 200, body: 'Hello, World!' };\n      }\n      "
     },
     "Environment": {
      "Variables": {
@@ -60,6 +61,7 @@
       }
      }
     },
+    "FunctionName": "cdk-lambda-nk",
     "Handler": "index.handler",
     "Role": {
      "Fn::GetAtt": [
@@ -95,7 +97,7 @@
      "ReadCapacityUnits": 5,
      "WriteCapacityUnits": 5
     },
-    "TableName": "MyTable"
+    "TableName": "NKUserTable"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -106,7 +108,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QQW7DIBB8S/YYEdokl8g3p2ovlaoq6c2KqjVsWxIDFmBHFuLvlYnTtJeegNnZmWFWfLlZ8uUMz34h5GnRqJrHfUBxYnj279Gvedx24kShitCT88oaklAE1xEDR9r22LzaRokBCpDkg7MDpAN7+DCXvcQa1LVEHp86I4KyporgOhOUJihgDgy+0MiG3PQSVl4HZHrlrNFkQkYSi4BSPv6Gq8ycw+FiejVJTKHmcWcbqiKg950muR2giNA6ZYRqsSmFsN0kzSbOuFBmhckRNBr8JJk/qchDUcU/2FC6iTtFGCUSk4NBbWXN4xvWOUSLLqhR+ZlyDoM/DYShHa/70S+M9Jfb7P+Ss3hKbEfedk7QrQ5mrCR+9Hf9as03/H529Eotpub57nJ+A7v6s4MAAgAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/32QQW8CIRCFf4tzNEirXszetGkvTZpGe9uYZhbGFl1gA+yaDdn/3ixitZeemBke3zzegs9Xcz6f4NnPhDzNalXxuAsoTgzP/jP6JY+bVpwolBGqVLyhJihgCgw6cl5ZQxKK4Fpi4EjbDut3WyvRQwGSfHC2h2HPng7mAhpYjbqSyONLa0RQ1pQRDrm8g7vWBPXbfaORNbncCSuvF2Q65azRZEKaDCwCSvl8Py6Tcgr7i4/r3oEp1DxubU1lBPS+1SQ3PRQRGqeMUA3WayFsm9Esa8YH60TIG0GjwS+S6d+KPBRl/DPr1y5rs4URMTDZG9RWVjx+YJVMNOiCGsmvlHyYWx6hb8ZyN+4Lo/w+q39zT/BhYFvytnWCbnEwYyXxo3/oFku+4o+To1dqlpPn28v5A/TY3pgkAgAA"
    },
    "Metadata": {
     "aws:cdk:path": "CiAwsStack/CDKMetadata/Default"

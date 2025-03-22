@@ -1,7 +1,7 @@
 {
   "version": "39.0.0",
   "files": {
-    "9d83bf4a7a7e24867eb6323d11c242075011103832769653ce9f8949bf4648b7": {
+    "2667675da49e8e9032ae124fe760b43ebbfddb42febca7329de0ce00a7066708": {
       "source": {
         "path": "CiAwsStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "9d83bf4a7a7e24867eb6323d11c242075011103832769653ce9f8949bf4648b7.json",
+          "objectKey": "2667675da49e8e9032ae124fe760b43ebbfddb42febca7329de0ce00a7066708.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
