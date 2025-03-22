@@ -10,28 +10,30 @@ export class MyCdkProjectStack extends cdk.Stack {
     
     // Create S3 bucket
     const myBucket = new s3.Bucket(this, 'MyFirstBucket', {
+      bucketName: 'cdk-s3-bucket-nk',
       versioned: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,  // Only for dev/test environments
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
     const myLambda = new lambda.Function(this, 'MyLambda', {
+      functionName: 'cdk-lambda-nk',
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: 'index.handler',
       code: lambda.Code.fromInline(`
-        exports.handler = async function(event) {
-          console.log('Lambda invoked!');
-          return { statusCode: 200, body: 'Hello, World!' };
-        }
+      exports.handler = async function(event) {
+        console.log('Lambda invoked!');
+        return { statusCode: 200, body: 'Hello, World!' };
+      }
       `),
       environment: {
-        BUCKET_NAME: myBucket.bucketName,
+      BUCKET_NAME: myBucket.bucketName,
       },
     });
 
     const myTable = new dynamodb.Table(this, 'MyTable', {
       partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING },
-      tableName: 'MyTable',
-      removalPolicy: cdk.RemovalPolicy.DESTROY,  // Only for dev/test environments
+      tableName: 'NKUserTable',
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
   }
 }
