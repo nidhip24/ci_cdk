@@ -22,7 +22,7 @@ export class MyCdkProjectStack extends cdk.Stack {
       code: lambda.Code.fromInline(`
       exports.handler = async function(event) {
         console.log('Lambda invoked!');
-        return { statusCode: 200, body: 'Hello, World!' };
+        return { statusCode: 200, body: 'Hello, Lamda Fn!' };
       }
       `),
       environment: {
