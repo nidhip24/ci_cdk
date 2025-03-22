@@ -9,4 +9,4 @@ phases:
       - cdk synth
 artifacts:
   files:
-    - '**/*'
+    - 'cdk.out/**/*.template.json'
